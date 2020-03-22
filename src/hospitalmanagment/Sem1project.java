@@ -14,7 +14,6 @@ public class Sem1project {
     public static void main(String[] args) {
         ConnectDatabase conDB = new ConnectDatabase();
         ProjectUserInterface ui = new ProjectUserInterface();
-        ui.showUI();
-        //conDB.fetch_allData();
+        ui.signUpUI();
     }
 }
