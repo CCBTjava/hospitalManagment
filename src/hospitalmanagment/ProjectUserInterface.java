@@ -1,35 +1,30 @@
 package hospitalmanagment;
 
+import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.GridLayout;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JTextField;
-import javax.swing.WindowConstants;
+import javax.swing.*;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
-
 /**
  *
  * @author gpatel
  */
 public class ProjectUserInterface {
 
-    
-
     void signUpUI() {
         JFrame mainFrame;
         JTextField nameInput, emailInput, passwordInput, confirmPasswordInput;
         JLabel nameLabel, emailLabel, passwordLabel, confirmPasswordLabel, signUpMessage;
-        JButton signUp,openLogin;
-        
+        JButton signUp, openLogin;
+
         mainFrame = new JFrame("User Registration");
 
         nameLabel = new JLabel("Name:");
@@ -53,14 +48,14 @@ public class ProjectUserInterface {
         confirmPasswordInput.setBounds(400, 250, 200, 30);
 
         signUpMessage = new JLabel("Thank you for registering with us click here to Login.");
-        signUpMessage.setBounds(350,150, 400, 30);
-        
+        signUpMessage.setBounds(350, 150, 400, 30);
+
         signUp = new JButton("SIGN UP");
         signUp.setBounds(400, 300, 200, 30);
-        
+
         openLogin = new JButton("Login");
         openLogin.setBounds(400, 200, 200, 30);
-        
+
         signUp.addActionListener((ActionEvent e) -> {
             mainFrame.getContentPane().removeAll();
             mainFrame.add(signUpMessage);
@@ -68,7 +63,7 @@ public class ProjectUserInterface {
             mainFrame.repaint();
             //  CALL SIGNUP FUCNTION
         });
-        openLogin.addActionListener((ActionEvent e) ->{
+        openLogin.addActionListener((ActionEvent e) -> {
             loginInUI();
             mainFrame.dispose();
         });
@@ -94,12 +89,12 @@ public class ProjectUserInterface {
         mainFrame.setVisible(true);
         mainFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
     }
-    
+
     void loginInUI() {
         JFrame mainFrame;
         JTextField emailInput, passwordInput;
         JLabel emailLabel, passwordLabel;
-        JButton login,openSignUp;
+        JButton login, openSignUp;
 
         mainFrame = new JFrame("Welcome to Hospital Management System");
 
@@ -114,21 +109,21 @@ public class ProjectUserInterface {
         passwordInput.setBounds(400, 200, 200, 30);
 
         login = new JButton("Login");
-        login.setBounds(400,250, 200, 30);
-        
+        login.setBounds(400, 250, 200, 30);
+
         openSignUp = new JButton("SignUp");
-        openSignUp.setBounds(400,300,200,30);
-        
+        openSignUp.setBounds(400, 300, 200, 30);
+
         login.addActionListener((ActionEvent e) -> {
-            //  CALL LOGIN FUNCTION
-            System.out.println("Login Done...!");
+            doctorDashboard();
+            mainFrame.dispose();
         });
-        
+
         openSignUp.addActionListener((ActionEvent e) -> {
             signUpUI();
             mainFrame.dispose();
         });
-        
+
         mainFrame.add(emailLabel);
         mainFrame.add(emailInput);
 
@@ -145,5 +140,35 @@ public class ProjectUserInterface {
         mainFrame.setLayout(null);
         mainFrame.setVisible(true);
         mainFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-    };
+    }
+
+    ;
+    void doctorDashboard() {
+        new DoctorDashboard().setVisible(true);
+        
+    }
+
+    void patientDashboard() {
+        JFrame mainFrame;
+        mainFrame = new JFrame("Welcome to Hospital Management System");
+
+        mainFrame.setSize(1000, 600);
+        Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
+        mainFrame.setLocation(dim.width / 2 - mainFrame.getSize().width / 2, dim.height / 2 - mainFrame.getSize().height / 2);
+        mainFrame.setLayout(null);
+        mainFrame.setVisible(true);
+        mainFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+    }
+
+    void receptionistDashboard() {
+        JFrame mainFrame;
+        mainFrame = new JFrame("Welcome to Hospital Management System");
+
+        mainFrame.setSize(1000, 600);
+        Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
+        mainFrame.setLocation(dim.width / 2 - mainFrame.getSize().width / 2, dim.height / 2 - mainFrame.getSize().height / 2);
+        mainFrame.setLayout(null);
+        mainFrame.setVisible(true);
+        mainFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+    }
 }
