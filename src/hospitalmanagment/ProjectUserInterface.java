@@ -1,9 +1,6 @@
 package hospitalmanagment;
 
-import java.awt.BorderLayout;
-import java.awt.Color;
 import java.awt.Dimension;
-import java.awt.GridLayout;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import javax.swing.*;
@@ -141,11 +138,8 @@ public class ProjectUserInterface {
         mainFrame.setVisible(true);
         mainFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
     }
-
-    ;
     void doctorDashboard() {
         new DoctorDashboard().setVisible(true);
-        
     }
 
     void patientDashboard() {
